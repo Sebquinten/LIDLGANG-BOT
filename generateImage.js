@@ -47,15 +47,15 @@ const generateImage = async (member) => {
 
     // draw in welcome
     ctx.font = "50px Impact"
-    ctx.fillText("WELCOME", dim.width/2, dim.margin + 70)
+    ctx.fillText("ME WHEN", dim.width/2, dim.margin + 70)
 
     //draw in the username
     ctx.font = "60px, Impact"
     ctx.fillText(username + discrim, dim.width/2, dim.height - dim.margin - 125)
 
     // draw in to the server
-    ctx.font = "40px Impact"
-    ctx.fillText("TO LIDLGANG", dim.width / 2, dim.height - dim.margin - 50)
+    ctx.font = "50px Impact"
+    ctx.fillText("JOINS THE SERVER", dim.width / 2, dim.height - dim.margin - 50)
 
     const attachement = new Discord.MessageAttachment(canvas.toBuffer(), "welcome.png")
     return attachement

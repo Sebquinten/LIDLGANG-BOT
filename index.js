@@ -12,23 +12,36 @@ const client = new Discord.Client({
     ]
 })
 
-client.on("ready", () => {
-    console.log(`Bot ${client.user.tag} is online!`)
-})
+let bot = {
+    client,
+    prefix: ">",
+    owners: ["303433764028153858"]
+}
 
-client.on('messageCreate', async message => {
-    if (message.content.includes("lidl") ){
-        await message.react("<:Lidl:936219718694625300>")
-    }
-})
+client.commands = new Discord.Collection()
+client.events = new Discord.Collection()
 
-client.on('messageCreate', async message => {
-    if (message.content.includes("lvo") ){
-        await message.react("<:sheeshVO:870554241079586877>")
-    }
-})
+client.loadEvents = (bot, reload) => require("./handlers/events")(bot, reload)
+client.loadCommands = (bot, reload) => require("./handlers/commands")(bot, reload)
 
-const welcomeChannelId = "936641026532188170"
+client.loadEvents(bot, false)
+client.loadCommands(bot, false)
+
+module.exports = bot
+
+// client.on('messageCreate', async message => {
+//     if (message.content.includes("lidl") ){
+//         await message.react("<:Lidl:936219718694625300>")
+//     }
+// })
+
+// client.on('messageCreate', async message => {
+//     if (message.content.includes("lvo") ){
+//         await message.react("<:sheeshVO:870554241079586877>")
+//     }
+// })
+
+const welcomeChannelId = "936644164261658634"
 
 client.on("guildMemberAdd", async (member) => {
     const img = await generateImage(member)
