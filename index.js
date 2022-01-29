@@ -29,18 +29,6 @@ client.loadCommands(bot, false)
 
 module.exports = bot
 
-// client.on('messageCreate', async message => {
-//     if (message.content.includes("lidl") ){
-//         await message.react("<:Lidl:936219718694625300>")
-//     }
-// })
-
-// client.on('messageCreate', async message => {
-//     if (message.content.includes("lvo") ){
-//         await message.react("<:sheeshVO:870554241079586877>")
-//     }
-// })
-
 const welcomeChannelId = "936644164261658634"
 
 client.on("guildMemberAdd", async (member) => {
