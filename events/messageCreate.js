@@ -11,8 +11,17 @@ module.exports = {
             await message.react("<:Lidl:936219718694625300>")
         }
         
+        //react with lvo emoji when "lvo" is said
         if (message.content.includes("lvo") ){
             await message.react("<:sheeshVO:870554241079586877>")
+        }
+
+        if (message.content.includes("vote") ){
+            await message.react("👍")
+        }
+
+        if (message.content.includes("vote") ){
+            await message.react("👎")
         }
 
         if (!message.guild) return
