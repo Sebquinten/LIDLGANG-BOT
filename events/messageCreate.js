@@ -16,11 +16,11 @@ module.exports = {
             await message.react("<:sheeshVO:870554241079586877>")
         }
 
-        if (message.content.includes("vote") ){
+        if (message.content.includes("/vote") ){
             await message.react("👍")
         }
 
-        if (message.content.includes("vote") ){
+        if (message.content.includes("/vote") ){
             await message.react("👎")
         }
 
